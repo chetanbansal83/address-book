@@ -116,9 +116,6 @@ export class AddressFormComponent implements OnInit {
             // if (true) {
             this.uploadError = false;
             this.uploadStatus = "";
-            // this.processNext(0, result);
-            // this.sendAll(result);
-            // console.log("responses: ", responses);
 
             result.forEach(element => {
               if (element["email"] && element["name"]) {
@@ -152,42 +149,6 @@ export class AddressFormComponent implements OnInit {
       };
     }
   }
-
-  // processNext(currentIndex, result) {
-  //   if (currentIndex >= result.length) {
-  //     return;
-  //   }
-
-  //   var next = result[currentIndex++];
-  //   this.addressService
-  //     .addAddress({
-  //       name: next["name"],
-  //       email: next["email"]
-  //     } as Address)
-  //     .then(response => {
-  //       if (response && response["status"] === "exists") {
-  //         this.showAlert = true;
-  //       }
-  //       this.alertService.confirmThis(
-  //         "Email <" +
-  //           response["email"] +
-  //           "> already exists. Want to replace name ?",
-  //         () => {
-  //           console.log("Yes");
-  //           this.update(response["name"], response["email"]);
-  //           // this.showAlert = false;
-  //           //ACTION: Do this If user says YES
-  //         },
-  //         function() {
-  //           console.log("No");
-  //           // this.showAlert = false;
-  //           //ACTION: Do this if user says NO
-  //         }
-  //       );
-  //       // this.alertService.showAsComponent("hello");
-  //       this.processNext(currentIndex, result);
-  //     });
-  // }
 
   async sendAll(results) {
     let responses = [];
